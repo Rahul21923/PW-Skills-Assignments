@@ -3,3 +3,147 @@ Q1. Create one variable containing following type of data:
 (ii) list
 (iii) float
 (iv) tuple
+     My_Variable = ('String', [5,4.32,True,'l',1+2j], 3.35, (1,2,'2nd Tuple',[1,2,]))
+
+Q2. Given are some following variables containing data:
+(i) var1 = ‘ ‘
+(ii) var2 = ‘[ DS , ML , Python]’
+(iii) var3 = [ ‘DS’ , ’ML’ , ‘Python’ ]
+(iv) var4 = 1.
+What will What will be the data type of the above given variable.
+    Data Type of Var1 is STRING. In Python, single or double quotes can be used to define strings, and in this case, we have defined a string containing a single space character.
+    Data Type of Var2 is STRING.
+    Data Type of Var3 is LIST We would use square [] brackets with elements separated by commas creating list.
+    Data Type of Var4 is FLOAT  The decimal point (.) in 1. signifies that this is a floating-point number rather than an integer.Having value 1.0.
+
+
+Q3. Explain the use of the following operators using an example:
+(i) /
+(ii) %
+(iii) //
+(iv) **
+  The / operator is used to perform division operations. 
+  Eg. result = 7 / 2
+      print(result)  # Output: 3.5
+(ii) The % operator is used for the modulo operation, which returns the remainder when one number is divided by another. 
+    Eg. result = 7 % 3
+        print(result)  # Output: 1
+  Eg 2. for i in range(10):
+        print(i % 3)
+Output.
+0
+1
+2
+0
+1
+2
+0
+1
+2
+0
+
+(iii) The // operator is used for floor division. Floor division returns the largest integer that is less than or equal to the result of dividing one number by another. 
+ Eg. result = 7 // 3
+    print(result)  # Output: 2
+(iv)  The ** operator is used for exponentiation. It allows us to raise a number to a specified power.
+ Eg. result = 2 ** 3
+  print(result)  # Output: 8
+
+
+Q4. Create a list of length 10 of your choice containing multiple types of data. Using for loop print the
+element and its data type.
+==>    my_list = [42, "Hello", 3.14, True, [1, 2, 3], {"name": "Alice", "age": 30}, None, (4, 5), {"apple", "banana"}, 99.9]
+l = [42, "Hello", 3.14, True, [1, 2, 3], {"name": "Alice", "age": 30}, None, (4, 5), {"apple", "banana"}, 99.9]
+
+for i in l:
+    print('Element:',(i))
+    print (type (i))
+              Output: Element: 42
+              <class 'int'>
+              Element: Hello
+              <class 'str'>
+              Element: 3.14
+              <class 'float'>
+              Element: True
+              <class 'bool'>
+              Element: [1, 2, 3]
+              <class 'list'>
+              Element: {'name': 'Alice', 'age': 30}
+              <class 'dict'>
+              Element: None
+              <class 'NoneType'>
+              Element: (4, 5)
+              <class 'tuple'>
+              Element: {'banana', 'apple'}
+              <class 'set'>
+              Element: 99.9
+              <class 'float'>
+Q5. Using a while loop, verify if the number A is purely divisible by number B and if so then how many
+times it can be divisible.
+
+A = int(input("Enter the dividend (A): "))
+B = int(input("Enter the divisor (B): "))
+
+# Initialize a counter for the number of divisions
+count = 0
+
+# Use a while loop to perform divisions until A is no longer divisible by B
+while A % B == 0:
+    A = A // B  # Integer division to get the quotient
+    count += 1
+
+# Check if A becomes 0 (purely divisible), and print the result
+if A == 0:
+    print(f"{count} times, {B} divides {A} purely.")
+else:
+    print(f"{B} does not divide {A} purely. Remainder: {A}")
+
+Q6. Create a list containing 25 int type data. Using for loop and if-else condition print if the element is
+divisible by 3 or not.
+
+ Create a list containing 25 integer-type data elements
+my_list = list(range(1, 26))
+
+# Use a for loop to iterate through the list
+for num in my_list:
+    if num % 3 == 0:
+        print(f"{num} is divisible by 3")
+    else:
+        print(f"{num} is not divisible by 3")
+
+Q7. What do you understand about mutable and immutable data types? Give examples for both showing
+this property.
+
+Mutable and immutable are terms used to describe the characteristics of data types in programming. These characteristics refer to whether the data can be changed after it's created (mutable) or whether it remains constant once created (immutable). 
+
+​Mutable Data Types:
+Lists (Mutable): Lists in Python are mutable, which means you can change their contents after creation. You can add, remove, or modify elements in a list.
+my_list = [1, 2, 3]
+my_list.append(4)       # Add an element
+my_list[0] = 0         # Modify an element
+my_list.remove(2)      # Remove an element
+
+Dictionaries (Mutable): Dictionaries in Python are also mutable. You can add, remove, or modify key-value pairs in a dictionary.
+my_dict = {"name": "Alice", "age": 30}
+my_dict["age"] = 31     # Modify a value
+my_dict["city"] = "XYZ" # Add a new key-value pair
+del my_dict["age"]      # Remove a key-value pair
+Sets (Mutable): Sets in Python are mutable. You can add or remove elements from a set.
+my_set = {1, 2, 3}
+my_set.add(4)    # Add an element
+my_set.remove(2) # Remove an element
+Immutable Data Types:
+Integers (Immutable): Integer values cannot be changed once they are assigned.
+my_int = 5
+# Attempting to change the value of my_int will result in an error.
+Strings (Immutable): Strings are also immutable. You cannot change individual characters in a string.
+my_str = "Hello"
+# Attempting to change my_str[0] to a different character will result in an error.
+Tuples (Immutable): Tuples are immutable sequences in Python. Once you create a tuple, you cannot change its elements.
+my_tuple = (1, 2, 3)
+# Attempting to modify an element of my_tuple will result in an error.
+Frozen Sets (Immutable): Frozen sets are sets that are immutable. Once created, you cannot add or remove elements from them.
+my_frozen_set = frozenset({1, 2, 3})
+# Attempting to add or remove elements from my_frozen_set will result in an error.
+The mutability or immutability of a data type affects how you can use and manipulate data in your Python programs. Mutable data types allow for in-place modifications, while immutable data types ensure data integrity and safety by preventing unintended changes.
+
